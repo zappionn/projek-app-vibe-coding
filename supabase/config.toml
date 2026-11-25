@@ -1,0 +1,48 @@
+# TeamFair Supabase Local & Deployment Configuration
+project_id = "teamfair-app"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[storage]
+enabled = true
+# 10 MB per file limit aligned with Free Tier 1 GB Storage budget
+file_size_limit = "10MiB"
+
+[auth]
+enabled = true
+site_url = "teamfair://auth-callback"
+additional_redirect_urls = ["teamfair://auth-callback", "https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_OAUTH_CLIENT_ID)"
+secret = "env(GOOGLE_OAUTH_SECRET)"
+
+[functions.analyze-message]
+verify_jwt = true
+
+[functions.evaluate-file-diff]
+verify_jwt = true
+
+[functions.copilot-assistant]
+verify_jwt = true
+
+[functions.send-push-fcm]
+verify_jwt = true
+
+[functions.sync-deadlines]
+verify_jwt = false
+
+[functions.verify-report]
+verify_jwt = false

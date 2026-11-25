@@ -1,0 +1,32 @@
+# Secrets & Environment Files
+.env
+.env.*
+supabase/.env
+supabase/.env.*
+!supabase/.env.example
+
+# Firebase & Android Keystores
+**/google-services.json
+**/GoogleService-Info.plist
+**/*.jks
+**/*.keystore
+**/key.properties
+
+# Flutter & Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+**/build/
+**/.gradle/
+**/local.properties
+**/*.apk
+**/*.aab
+**/*.ipa
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
